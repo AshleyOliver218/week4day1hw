@@ -91,3 +91,37 @@ for(let i =0; i < 2; i++){
 for(let i =0; i < 2; i++){
     person1.exercise()
 }
+console.log(person1)
+
+
+class Dinner{
+  constructor(appetizer,entree,dessert){
+    this.appetizer = appetizer;
+    this.entree = entree;
+    this.dessert = dessert;
+  }
+}
+
+class ChefFactory {
+    constructor () {
+      this.menu = []
+    }
+    makeDinner (appetizer, entree, dessert) {
+      const newDinner = new Dinner(appetizer, entree,dessert);
+      this.menu.push(newDinner);
+    }
+    printMenu(){
+      for(let dinner of this.menu){
+        console.log(dinner)
+      }
+    }
+  }
+
+ 
+let chefRamsey = new ChefFactory
+chefRamsey.makeDinner("Spinach Dip", "Hot Wings", "Lava Cake")
+
+chefRamsey.makeDinner("Calamari", "Tuna Tar Tar", "Lemon Mousse")
+
+chefRamsey.makeDinner("Roasted Brussel Sprouts", "Seafood Paella", "Pumpkin Spice Souffle")
+chefRamsey.printMenu()
